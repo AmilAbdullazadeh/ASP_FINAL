@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ASPFinal.Models.News>
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>News</h2>
+
+<a style="margin: 30px 0;" href="/Admin/News/Create" class="btn btn-primary btn-lg">
+    <span class="lnr lnr-plus-circle"></span> &nbsp; Create News
+</a>
+
+<table class="table table-bordered">
+    <thead class="bg-info">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Title)</th>
+            <th>@Html.DisplayNameFor(m => m.Content)</th>
+            <th>@Html.DisplayNameFor(m => m.Image)</th>
+            <th>@Html.DisplayNameFor(m => m.CreateDate)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="vertical-align: middle; text-align: center;">
+                    <img width="200" class="img-rounded" src="~/Areas/Admin/Public/assets/img/@item.Image" />
+                </td>
+                <td style="vertical-align: middle; text-align: center;">@item.Title</td>
+                <td style="vertical-align: middle; text-align: center;">@item.Content</td>
+                <td style="vertical-align: middle; text-align: center;">@item.CreateDate</td>
+                <td style="vertical-align: middle; text-align: center;">
+                    <a title="Edit Carousels" class="btn btn-warning" href="/Admin/News/Edit/@item.Id">
+                        <i class="lnr lnr-pencil"></i>
+                    </a>
+                    <a title="Delete Carousels" class="btn btn-danger" href="/Admin/News/Delete/@item.Id">
+                        <i class="lnr lnr-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

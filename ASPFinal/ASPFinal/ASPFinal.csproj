@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2535E171-4522-4D17-BC8A-02593528431F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASPFinal</RootNamespace>
+    <AssemblyName>ASPFinal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AJAXController.cs" />
+    <Compile Include="Controllers\AnnouncementsController.cs" />
+    <Compile Include="Controllers\AuthorizeUser.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\CarContext.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\SelectListExtensions.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261607292_aaA.cs" />
+    <Compile Include="Migrations\201903261607292_aaA.Designer.cs">
+      <DependentUpon>201903261607292_aaA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Announcements.cs" />
+    <Compile Include="Models\CarDetails.cs" />
+    <Compile Include="Models\FuelType.cs" />
+    <Compile Include="Models\Gearbox.cs" />
+    <Compile Include="Models\Marka.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModels\CreateAnnouncementsVM.cs" />
+    <Compile Include="Models\ViewModels\UserLoginVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewComponents\MarkaViewComponent.cs" />
+    <Compile Include="ViewModels\AnnouncementsVM.cs" />
+    <Compile Include="ViewModels\DetailsVM.cs" />
+    <Compile Include="ViewModels\HomeIndexVM.cs" />
+    <Compile Include="ViewModels\ResentNewsVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Public\assets\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\assets\css\demo.css" />
+    <Content Include="Areas\Admin\Public\assets\css\main.css" />
+    <Content Include="Areas\Admin\Public\assets\img\02c492b9-b148-4cc1-b5ab-8115c3909a4f314116.png" />
+    <Content Include="Areas\Admin\Public\assets\img\67961123-1f99-4404-9796-d9f79d57ed41iconfinder_heart_299063.png" />
+    <Content Include="Areas\Admin\Public\assets\img\apple-icon.png" />
+    <Content Include="Areas\Admin\Public\assets\img\bbbb18f1-0180-405d-9dbd-e6e3374a07f089e295ad-fcd2-4b11-b4de-43b0403f122eagent-7.jpg" />
+    <Content Include="Areas\Admin\Public\assets\img\c33b114a-9253-4d3d-a049-639c970b668dapple-touch-icon.png" />
+    <Content Include="Areas\Admin\Public\assets\img\favicon.png" />
+    <Content Include="Areas\Admin\Public\assets\img\login-bg.jpg" />
+    <Content Include="Areas\Admin\Public\assets\img\logo-dark.png" />
+    <Content Include="Areas\Admin\Public\assets\img\profile-bg.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user-medium.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user1.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user2.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user3.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user4.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user5.png" />
+    <Content Include="Areas\Admin\Public\assets\scripts\klorofil-common.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\style.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Public\assets\css\color.css" />
+    <Content Include="Public\assets\css\master.css" />
+    <Content Include="Public\assets\css\responsive.css" />
+    <Content Include="Public\assets\css\theme.css" />
+    <Content Include="Public\assets\fonts\elegant\fonts\ElegantIcons-1.txt" />
+    <Content Include="Public\assets\fonts\elegant\fonts\ElegantIcons.svg" />
+    <Content Include="Public\assets\fonts\elegant\fonts\ElegantIcons.txt" />
+    <Content Include="Public\assets\fonts\elegant\style.css" />
+    <Content Include="Public\assets\fonts\flaticon\font\Flaticon-1.txt" />
+    <Content Include="Public\assets\fonts\flaticon\font\flaticon.css" />
+    <Content Include="Public\assets\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="Public\assets\fonts\flaticon\font\Flaticon.txt" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont-1.txt" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont-2.txt" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont.txt" />
+    <Content Include="Public\assets\fonts\stroke\style.css" />
+    <Content Include="Public\assets\js\custom.js" />
+    <Content Include="Public\assets\js\map-custom.js" />
+    <Content Include="Public\assets\libs\bootstrap\bootstrap.css" />
+    <Content Include="Public\assets\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Public\assets\libs\jquery-1.12.4.min.js" />
+    <Content Include="Public\assets\libs\jquery-migrate-1.2.1.js" />
+    <Content Include="Public\assets\media\components\b-banner\bg-2.jpeg" />
+    <Content Include="Public\assets\media\components\b-banner\bg-3.jpeg" />
+    <Content Include="Public\assets\media\components\b-banner\bg.jpeg" />
+    <Content Include="Public\assets\media\components\b-blockquote\face-1.jpeg" />
+    <Content Include="Public\assets\media\components\b-blockquote\face-2.jpeg" />
+    <Content Include="Public\assets\media\components\b-blockquote\face-3.jpeg" />
+    <Content Include="Public\assets\media\components\b-blockquote\ic-quotes.png" />
+    <Content Include="Public\assets\media\components\b-booking-form\bg-1.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\1.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\2.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\3.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\4.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\5.jpeg" />
+    <Content Include="Public\assets\media\components\b-brands\6.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\263x210_1.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\263x210_2.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\263x210_3.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\263x210_4.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\263x210_5.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-1.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-2.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-3.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-4.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-5.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-6.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\access-7.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\featured-1.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\featured-2.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\featured-3.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\featured-4.jpeg" />
+    <Content Include="Public\assets\media\components\b-goods\featured-5.jpeg" />
+    <Content Include="Public\assets\media\components\b-main-slider\1.jpeg" />
+    <Content Include="Public\assets\media\components\b-main-slider\2.jpeg" />
+    <Content Include="Public\assets\media\components\b-main-slider\3.jpeg" />
+    <Content Include="Public\assets\media\components\b-main-slider\6.jpeg" />
+    <Content Include="Public\assets\media\components\b-main-slider\7.jpeg" />
+    <Content Include="Public\assets\media\components\b-rent\1.jpeg" />
+    <Content Include="Public\assets\media\components\b-rent\2.jpeg" />
+    <Content Include="Public\assets\media\components\b-rent\3.jpeg" />
+    <Content Include="Public\assets\media\components\b-services\1.jpeg" />
+    <Content Include="Public\assets\media\components\b-subscribe\bg.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-1_1.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-1_2.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-1_3.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-2_1.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-2_2.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-2_3.jpeg" />
+    <Content Include="Public\assets\media\components\b-team\group-2_4.jpeg" />
+    <Content Include="Public\assets\media\components\b-thumb-slider\img-1.jpeg" />
+    <Content Include="Public\assets\media\components\b-title-page\bg-1.jpeg" />
+    <Content Include="Public\assets\media\components\footer\bg.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-1.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-10.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-2.png" />
+    <Content Include="Public\assets\media\content\bg\bg-3.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-4.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-5.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-6.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-7.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-8.jpeg" />
+    <Content Include="Public\assets\media\content\bg\bg-9.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\1.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\2.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\3.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\4.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\5.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\6.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\7.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\8.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\100x80\9.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\1.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\10.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\2.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\3.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\4.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\5.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\6.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\7.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\8.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\384x300\9.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\main\1.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\thumb\1.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\thumb\2.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\thumb\3.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\thumb\4.jpeg" />
+    <Content Include="Public\assets\media\content\gallery\car-details\thumb\5.jpeg" />
+    <Content Include="Public\assets\media\content\other\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\100x80\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\100x80\2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\100x80\3.jpeg" />
+    <Content Include="Public\assets\media\content\posts\100x80\4.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x180\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x180\2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x250\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x250\2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x250\3.jpeg" />
+    <Content Include="Public\assets\media\content\posts\360x270\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\750x380\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\750x380\2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\750x380\3.jpeg" />
+    <Content Include="Public\assets\media\content\posts\about-author\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\face\1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\face\2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\face\76x76_1.jpeg" />
+    <Content Include="Public\assets\media\content\posts\face\76x76_2.jpeg" />
+    <Content Include="Public\assets\media\content\posts\face\76x76_3.jpeg" />
+    <Content Include="Public\assets\media\general\logo-dark.png" />
+    <Content Include="Public\assets\media\general\logo.png" />
+    <Content Include="Public\assets\plugins\animate\animate.css" />
+    <Content Include="Public\assets\plugins\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Public\assets\plugins\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="Public\assets\plugins\contact_me.js" />
+    <Content Include="Public\assets\plugins\datepicker\jquery.datetimepicker.css" />
+    <Content Include="Public\assets\plugins\datepicker\jquery.datetimepicker.js" />
+    <Content Include="Public\assets\plugins\headers\header.css" />
+    <Content Include="Public\assets\plugins\headers\header.js" />
+    <Content Include="Public\assets\plugins\headers\slidebar.js" />
+    <Content Include="Public\assets\plugins\headers\yamm.css" />
+    <Content Include="Public\assets\plugins\isotope\imagesLoaded.js" />
+    <Content Include="Public\assets\plugins\isotope\isotope.pkgd.min.js" />
+    <Content Include="Public\assets\plugins\jqBootstrapValidation.js" />
+    <Content Include="Public\assets\plugins\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Public\assets\plugins\magnific-popup\magnific-popup.css" />
+    <Content Include="Public\assets\plugins\noUiSlider\nouislider.css" />
+    <Content Include="Public\assets\plugins\noUiSlider\nouislider.min.js" />
+    <Content Include="Public\assets\plugins\noUiSlider\wNumb.js" />
+    <Content Include="Public\assets\plugins\owl-carousel\owl.carousel.css" />
+    <Content Include="Public\assets\plugins\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Public\assets\plugins\owl-carousel\owl.video.play.png" />
+    <Content Include="Public\assets\plugins\parallax\parallax.css" />
+    <Content Include="Public\assets\plugins\rendro-easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="Public\assets\plugins\rendro-easy-pie-chart\waypoints.min.js" />
+    <Content Include="Public\assets\plugins\scrollreveal\scrollreveal.min.js" />
+    <Content Include="Public\assets\plugins\slider-pro\images\closedhand.txt" />
+    <Content Include="Public\assets\plugins\slider-pro\images\openhand.txt" />
+    <Content Include="Public\assets\plugins\slider-pro\jquery.sliderPro.min.js" />
+    <Content Include="Public\assets\plugins\slider-pro\slider-pro.css" />
+    <Content Include="Public\assets\plugins\switcher\css\color1.css" />
+    <Content Include="Public\assets\plugins\switcher\css\color2.css" />
+    <Content Include="Public\assets\plugins\switcher\css\color3.css" />
+    <Content Include="Public\assets\plugins\switcher\css\color4.css" />
+    <Content Include="Public\assets\plugins\switcher\css\switcher.css" />
+    <Content Include="Public\assets\plugins\switcher\js\dmss.js" />
+    <Content Include="Public\index.html" />
+    <Content Include="Public\LogandReg\css\style.css" />
+    <Content Include="Public\LogandReg\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Public\LogandReg\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Public\LogandReg\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Public\LogandReg\images\signin-image.jpg" />
+    <Content Include="Public\LogandReg\images\signup-image.jpg" />
+    <Content Include="Public\LogandReg\js\main.js" />
+    <Content Include="Public\LogandReg\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Public\LogandReg\vendor\jquery\jquery.min.js" />
+    <Content Include="Public\Login\css\main.css" />
+    <Content Include="Public\Login\css\util.css" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Public\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Public\Login\images\bg-01.jpg" />
+    <Content Include="Public\Login\images\icons\favicon.ico" />
+    <Content Include="Public\Login\js\main.js" />
+    <Content Include="Public\Login\vendor\animate\animate.css" />
+    <Content Include="Public\Login\vendor\animsition\css\animsition.css" />
+    <Content Include="Public\Login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Public\Login\vendor\animsition\js\animsition.js" />
+    <Content Include="Public\Login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Public\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Public\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Public\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Public\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Public\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Public\Login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Public\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Public\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Public\Login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Public\Login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Public\Login\vendor\daterangepicker\moment.js" />
+    <Content Include="Public\Login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Public\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Public\Login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Public\Login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Public\Login\vendor\select2\select2.css" />
+    <Content Include="Public\Login\vendor\select2\select2.js" />
+    <Content Include="Public\Login\vendor\select2\select2.min.css" />
+    <Content Include="Public\Login\vendor\select2\select2.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\.gitattributes" />
+    <Content Include="Public\OwlCarousel2-2.3.4\.gitignore" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\ajax-loader.gif" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.carousel.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.carousel.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.theme.default.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.theme.default.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.theme.green.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.theme.green.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\assets\owl.video.play.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\owl.carousel.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\owl.carousel.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\css\animate.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\css\docs.theme.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\bird_blue_32.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\download.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-drag.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-modern.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-module.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-options.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-responsive.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\feature-zombie.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\owl-logo.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\img\twitter_25.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\js\app.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\js\foundation.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\owl.carousel.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\vendors\foundation.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\vendors\highlight.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.mousewheel.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\animate.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\autoheight.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\autoplay.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\autowidth.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\basic.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\center.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\demos.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\events.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\lazyLoad.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\merge.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\mousewheel.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\responsive.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\rtl.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\stagepadding.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\test.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\urlhashnav.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\demos\video.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\api-classes.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\api-events.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\api-options.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\dev-buildin-plugins.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\dev-external.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\dev-plugin-api.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\dev-styles.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\started-faq.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\started-installation.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\started-welcome.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\support-changelog.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\support-contact.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\docs\support-contributing.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\index.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\css\animate.css" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\bird_blue_32.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\download.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-drag.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-modern.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-module.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-options.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-responsive.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\feature-zombie.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\owl-logo.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\img\twitter_25.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\js\app.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\js\foundation.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\vendors\foundation.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\vendors\highlight.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.mousewheel.min.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\helpers\modulo.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\helpers\test.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\Gruntfile.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\img\ajax-loader.gif" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\img\owl.video.play.png" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.animate.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.autoheight.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.autoplay.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.autorefresh.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.carousel.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.hash.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.lazyload.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.navigation.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.support.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.support.modernizr.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\owl.video.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\test\index.html" />
+    <Content Include="Public\OwlCarousel2-2.3.4\test\unit\autoplay.js" />
+    <Content Include="Public\OwlCarousel2-2.3.4\test\unit\core.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Public\assets\fonts\elegant\fonts\ElegantIcons-1.eot" />
+    <Content Include="Public\assets\fonts\elegant\fonts\ElegantIcons.eot" />
+    <Content Include="Public\assets\fonts\flaticon\font\Flaticon-1.eot" />
+    <Content Include="Public\assets\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont-1.eot" />
+    <Content Include="Public\assets\fonts\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Public\assets\fonts\stroke\fonts\Stroke-Gap-Icons.eot" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Public\assets\css\demo.css.map" />
+    <Content Include="Areas\Admin\Public\assets\css\main.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Public\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Public\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="Public\Login\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Public\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Public\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Public\LogandReg\.sass-cache\21880c0ffe15753a53f8402e9f64e1077e071510\style.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\extend.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\fonts.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\global.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\minxi.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\2866be86c578bb583fbf023501bb9fd24cc3bf22\variables.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\3948936f84e1a30385e73a9be140b58b48c82e15\style.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\main.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\responsive.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\extend.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\fonts.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\global.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\minxi.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\variables.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\main.scssc" />
+    <Content Include="Public\LogandReg\.sass-cache\9dc767a56f3dc2f8a933300255cd2265f13191d4\responsive.scssc" />
+    <Content Include="Public\LogandReg\css\style.css.map" />
+    <Content Include="Public\LogandReg\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Public\LogandReg\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Public\LogandReg\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Public\LogandReg\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="Public\LogandReg\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="Public\LogandReg\scss\common\extend.scss" />
+    <Content Include="Public\LogandReg\scss\common\fonts.scss" />
+    <Content Include="Public\LogandReg\scss\common\global.scss" />
+    <Content Include="Public\LogandReg\scss\common\minxi.scss" />
+    <Content Include="Public\LogandReg\scss\common\variables.scss" />
+    <Content Include="Public\LogandReg\scss\layouts\main.scss" />
+    <Content Include="Public\LogandReg\scss\layouts\responsive.scss" />
+    <Content Include="Public\LogandReg\scss\style.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\.travis.yml" />
+    <Content Include="Public\OwlCarousel2-2.3.4\bower.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\CONTRIBUTING.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\LICENSE" />
+    <Content Include="Public\OwlCarousel2-2.3.4\dist\README.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\owlcarousel\README.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs\assets\vendors\jquery.min.map" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\custom.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\demos.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\docs.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\docs.theme.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\highlight.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\scss\_settings.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\assets\vendors\jquery.min.map" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\data\classes.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\data\events.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\data\features.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\data\options.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\layouts\demos.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\layouts\docs.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\layouts\home.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\animate.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autoheight.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autoplay.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\autowidth.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\basic.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\center.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\demos.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\events.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\lazyLoad.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\merge.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\mousewheel.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\responsive.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\rtl.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\stagepadding.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\test.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\urlhashnav.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\demos\video.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-classes.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-events.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\api-options.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-buildin-plugins.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-external.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-plugin-api.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\dev-styles.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-faq.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-installation.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\started-welcome.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-changelog.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-contact.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\docs\support-contributing.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\pages\index.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\footer.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\head.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\header.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\home-carousel.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\home-features.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\home-hero.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\home-teaser-text.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\javascripts.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\releated-docs.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\sidenav-docs.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\title.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\docs_src\templates\partials\vendors.hbs" />
+    <Content Include="Public\OwlCarousel2-2.3.4\ISSUE_TEMPLATE.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\LICENSE" />
+    <Content Include="Public\OwlCarousel2-2.3.4\package-lock.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\package.json" />
+    <Content Include="Public\OwlCarousel2-2.3.4\README.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\ROADMAP.md" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\.jscsrc" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\js\.jshintrc" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\owl.carousel.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\owl.theme.default.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\owl.theme.green.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_animate.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_autoheight.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_core.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_lazyload.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_theme.default.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_theme.green.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_theme.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\src\scss\_video.scss" />
+    <Content Include="Public\OwlCarousel2-2.3.4\_config.json" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CarDetails.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\FullNews.cshtml" />
+    <Content Include="Views\Announcements\Create.cshtml" />
+    <Content Include="Views\Shared\_LoadModelPartial.cshtml" />
+    <Content Include="Views\Announcements\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Images\news\" />
+    <Folder Include="Views\AJAX\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903261607292_aaA.resx">
+      <DependentUpon>201903261607292_aaA.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60407</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60407/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

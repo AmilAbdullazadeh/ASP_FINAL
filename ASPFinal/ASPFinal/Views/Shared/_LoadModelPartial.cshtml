@@ -1,0 +1,8 @@
+﻿@model ASPFinal.ViewModels.HomeIndexVM
+
+<select class="form-control" id="marka" name="marka">
+    @foreach (var item in Model.models)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>

@@ -1,0 +1,179 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* COLOR CSS 1*/
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+a,
+.text-primary,
+.text-primary_h:hover,
+.text-primary_b:before,
+.text-primary_a:after,
+.list > li > a:hover,
+.pager li > a:hover,
+.pager li > a:hover .icon,
+.pagination_primary > li:first-child > a:hover,
+.pagination_primary > li:first-child > a:hover .icon,
+.pagination_primary > li:last-child > a:hover,
+.pagination_primary > li:last-child > a:hover .icon,
+.search-close:hover,
+.breadcrumb > li > a:hover,
+.b-progress-list__percent,
+.b-list-brands__link:hover,
+.b-bnr__title,
+.b-goods__price,
+.footer-list__link:hover,
+.b-filter-type__input:checked + .b-filter-type__label .b-filter-type__icon,
+.b-goods-ac__price,
+.b-goods-links__link:hover,
+.b-post-1 .b-post-social__list > li > a:hover,
+.entry-meta__link:hover,
+.b-post .entry-title a:hover,
+.b-subscribe__submit:hover,
+.copyright a:hover,
+.breadcrumb > li > a > .icon,
+.b-goods-1__info-link:after,
+.b-goods-1__choose:hover,
+.btns-switch__item:hover,
+.btns-switch__item.active,
+.b-goods-1_mod-a .b-goods-1__title,
+.b-car-info__item-info,
+.b-blockquote-2:after,
+.post-carousel .owl-nav div:hover:before,
+.b-team-2__contact:hover,
+.accordion .btn-collapse:hover {color: #28af0f;}
+
+
+.bg-primary,
+.bg-primary_h:hover,
+.bg-primary_b:before,
+.bg-primary_a:after,
+.pagination_primary > .active > a,
+.pagination_primary > .active > span,
+.pagination_primary > .active > a,
+.pagination_primary > .active > span,
+.pagination_primary > li > a:hover,
+.pagination_primary > li > a:focus,
+.dropcap_primary:first-letter,
+.tooltip-1 .tooltip-inner,
+.btn-primary,
+.forms__label-check-1:after,
+.forms__label-radio-2:before,
+.ui-decor,
+.ui-decor:after,
+.ui-decor:before,
+.ui-decor-2,
+.noUi-handle:after,
+.b-team__category,
+.b-isotope-grid__item .icon,
+.b-blockquote__author:before,
+.owl-theme .owl-dots .owl-dot.active span,
+.entry-meta__categorie,
+.area-bg_prim:after,
+.footer-section__title:before,
+.b-goods-feat__name:before,
+.b-goods-feat__label,
+.b-advantages-2:hover,
+.b-post-1 .entry-title:before,
+.sp-thumbnail-title:before,
+.b-goods-1__price,
+.b-car-info__price,
+.sp-button:after,
+.ui-title-inner:before,
+.list_mark-prim > li:before,
+.widget-list__item:hover:before,
+.list-tags__link:hover,
+.entry-footer__tags:hover,
+.accordion .btn-collapse .icon,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current,
+.forms__label-radio-1:after,
+.rent-carousel .owl-nav div:hover,
+.b-advantages-5:hover .b-advantages-5__icon,
+.yamm.nav>li>a:focus,
+.yamm.nav>li>a:hover {background-color: #28af0f;}
+
+
+.border_prim,
+.border_prim_h:hover,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination a:hover,
+.pagination span:hover,
+.pagination a:focus,
+.pagination span:focus,
+.progress_border_primary,
+.btn-primary,
+.forms__label-radio-2:before,
+.b-filter-type-2__input:checked + .b-filter-type-2__label,
+.rent-carousel .owl-nav div:hover {border-color: #28af0f;}
+
+.border-t_prim,
+.border-t_prim_h:hover,
+.tooltip-1.top .tooltip-arrow,
+.tooltip-1.top-left .tooltip-arrow,
+.tooltip-1.top-right .tooltip-arrow {border-top-color: #28af0f;}
+
+.border-r_prim,
+.border-r_prim_h:hover,
+.tooltip-1.right .tooltip-arrow {border-right-color: #28af0f;}
+
+.border-b_prim,
+.border-b_prim_h:hover,
+.tooltip-1.bottom .tooltip-arrow,
+.tooltip-1.bottom-left .tooltip-arrow,
+.tooltip-1.bottom-right .tooltip-arrow,
+.table_primary > thead > tr > th,
+.collapse.in,
+.btn-up:after,
+.b-filter-2__title,
+.b-bnr-2,
+.b-advantages-3.active {border-bottom-color: #28af0f;}
+
+.border-l_prim,
+.border-l_prim_h:hover,
+.tooltip-1.left .tooltip-arrow,
+.border-left_primary:before,
+.form-sidebar__btn {border-left-color: #28af0f;}
+
+
+.b-advantages-3.active {
+  box-shadow: 0 2px 0 0 #28af0f;
+}
+
+
+.text-second,
+.text-second_h:hover,
+.link-tooltip-2,
+.forms__label-check-2:after {color: #0097c2;}
+
+.bg-second,
+.bg-second_h:hover,
+.tooltip-2 .tooltip-inner,
+.dropcap_secondary:first-letter {background-color: #0097c2;}
+
+.border_second,
+.border_second_h:hover,
+.progress_border_secondary {border-color: #0097C2;}
+
+.border-t_second,
+.border-t_second_h:hover,
+.tooltip-2.top .tooltip-arrow,
+.tooltip-2.top-left .tooltip-arrow,
+.tooltip-2.top-right .tooltip-arrow {border-top-color: #0097c2;}
+
+.border-r_second,
+.border-r_second_h:hover,
+.tooltip-2.right .tooltip-arrow {border-right-color: #0097c2;}
+
+.border-l_second,
+.border-l_second_h:hover,
+.tooltip-2.left .tooltip-arrow {border-left-color: #0097c2;}
+
+.border-b_second,
+.border-b_second_h:hover,
+.tooltip-2.bottom .tooltip-arrow,
+.tooltip-2.bottom-left .tooltip-arrow,
+.tooltip-2.bottom-right .tooltip-arrow,
+.table_secondary > thead > tr > th {border-bottom-color: #0097c2;}
+

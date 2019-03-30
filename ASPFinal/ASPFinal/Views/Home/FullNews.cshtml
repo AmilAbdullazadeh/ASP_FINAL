@@ -1,0 +1,362 @@
+﻿@model ASPFinal.ViewModels.HomeIndexVM
+@{
+    ViewBag.Title = "   ";
+}
+<link rel="stylesheet" href="~/Public/assets/\css\master.css">
+<!-- SWITCHER-->
+<link href="~/Public/assets/plugins\switcher\css\switcher.css" rel="stylesheet" id="switcher-css">
+<link href="~/Public/assets/plugins\switcher\css\color1.css" rel="alternate stylesheet" title="color1">
+<link href="~/Public/assets/plugins\switcher\css\color2.css" rel="alternate stylesheet" title="color2">
+<link href="~/Public/assets/plugins\switcher\css\color3.css" rel="alternate stylesheet" title="color3">
+<link href="~/Public/assets/plugins\switcher\css\color4.css" rel="alternate stylesheet" title="color4">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<body>
+    <!-- Loader-->
+    <div id="page-preloader">
+        <span class="spinner border-t_second_b border-t_prim_a"></span>
+    </div>
+    <!-- Loader end-->
+    <!-- ==========================-->
+    <!-- MOBILE MENU-->
+    <!-- ==========================-->
+    <div data-off-canvas="mobile-slidebar left overlay">
+        <ul class="nav navbar-nav">
+            <li>
+                <h4><a href="">Mobile sidebar</a></h4>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="home.html" tabindex="-1">Home one page</a>
+                    </li>
+                    <li>
+                        <a href="home-2.html" tabindex="-1">Home standart</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="repair-shop.html">Repair Shop</a>
+            </li>
+            <li>
+                <a href="car-rental.html">Car Rental</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Listings<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="listings-1.html" tabindex="-1">Listings ver 01</a>
+                    </li>
+                    <li>
+                        <a href="listings-2.html" tabindex="-1">Listings ver 02</a>
+                    </li>
+                    <li>
+                        <a href="listings-3.html" tabindex="-1">Listings ver 03</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="blog-main.html" tabindex="-1">Blog main</a>
+                    </li>
+                    <li>
+                        <a href="blog-post.html" tabindex="-1">Blog post</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Pages<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="car-details.html" tabindex="-1">Car details</a>
+                    </li>
+                    <li>
+                        <a href="typography.html" tabindex="-1">Typography</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="l-theme animated-css" data-header="sticky" data-header-top="200" data-canvas="container">
+        <!-- Start Switcher-->
+        <div class="switcher-wrapper">
+            <div class="demo_changer">
+                <div class="demo-icon text-primary">
+                    <i class="fa fa-cog fa-spin fa-2x"></i>
+                </div>
+                <div class="form_holder">
+                    <div class="predefined_styles">
+                        <div class="skin-theme-switcher">
+                            <h4>Color</h4>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color1" style="background-color:#d01818"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color2" style="background-color:#FFAC3A"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color3" style="background-color:#28af0f"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color4" style="background-color:#e425e9"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end switcher-->
+        <!-- ==========================-->
+        <!-- SEARCH MODAL-->
+        <!-- ==========================-->
+        <div class="header-search open-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                        <div class="navbar-search">
+                            <form class="search-global">
+                                <input class="search-global__input" type="text" placeholder="Type to search" autocomplete="off" name="s" value="">
+                                <button class="search-global__btn">
+                                    <i class="icon stroke icon-Search"></i>
+                                </button>
+                                <div class="search-global__note">Begin typing your search above and press return to search.</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="search-close close" type="button">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div data-off-canvas="slidebar-1 left overlay">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="scrollTo" href="#features-section">features</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#services-section">Services</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#works-section">Works</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#about-section">About</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#team-section">Team</a>
+                </li>
+                <li>
+                    <a href="#">News</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="blog.html">Blog 1</a>
+                                </li>
+                                <li>
+                                    <a href="blog-2.html">Blog 2</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Blog single</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-single.html">Portfolio single</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="contact.html">Contact 1</a>
+                                </li>
+                                <li>
+                                    <a href="contact-2.html">Contact 2</a>
+                                </li>
+                                <li>
+                                    <a href="contact-3.html">Contact 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <header class="header header-boxed-width navbar-fixed-top header-background-white header-color-black header-topbar-dark header-logo-black header-topbarbox-1-left header-topbarbox-2-right header-navibox-1-left header-navibox-2-right header-navibox-3-right header-navibox-4-right">
+            <div class="container container-boxed-width">
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="header-navibox-2">
+                            @if (Session["user"] == null)
+                            {
+                                <ul class="yamm main-menu nav navbar-nav">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                var user = Session["user"] as ASPFinal.Models.User;
+                                <ul class="yamm main-menu nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="car-details.html" data-toggle="dropdown">@user.Name<b class="caret"></b></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a style="color: black;" class="dropdown-item" href="/Account/Logout">Log out</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                <nav class="navbar" id="nav">
+                    <div class="container">
+                        <div class="header-navibox-1">
+                            <!-- Mobile Trigger Start-->
+                            <button class="menu-mobile-button visible-xs-block js-toggle-mobile-slidebar toggle-menu-button">
+                                <i class="toggle-menu-button-icon"><span></span><span></span><span></span><span></span><span></span><span></span></i>
+                            </button>
+                            <!-- Mobile Trigger End-->
+                            <a class="navbar-brand scroll" href="~/Home/Index">
+                                <img class="normal-logo img-responsive" src="~/Public/assets/media\general\logo.png" alt="logo">
+                                <img class="scroll-logo hidden-xs img-responsive" src="~/Public/assets/media\general\logo-dark.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="header-navibox-2">
+                            <ul class="yamm main-menu nav navbar-nav">
+                                <li>
+                                    <a href="~/Home/Index">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end .header-->
+        <div class="section-title-page area-bg area-bg_dark area-bg_op_70">
+            <div class="area-bg__inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="b-title-page bg-primary_a">news blog</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end .b-title-page-->
+        <div class="bg-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="home.html"><i class="icon fa fa-home"></i></a>
+                            </li>
+                            <li>
+                                <a href="blog-main.html">Latest News</a>
+                            </li>
+                            <li class="active">Full News</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end breadcrumb-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <main class="l-main-content">
+                        <article class="b-post b-post-full clearfix">
+                            @foreach (var item in Model.news)
+                            {
+                                <div col-md-6 col-xs-6>
+
+                                    <img style="width: 80%" class="img-responsive" src="~/Areas/Admin/Public/assets/img/@item.Image" alt="foto">
+
+                                </div>
+                                <div col-md-6 col-xs-6>
+
+                                    <div class="entry-main">
+                                        <div class="entry-header">
+                                            <h2 class="entry-title">@item.Title</h2>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>
+                                                @item.Content
+                                            </p>
+                                            <div class="b-blockquote b-blockquote-2">
+                                                <blockquote>
+                                                    <p>
+                                                        @item.Content
+                                                    </p>
+                                                    <cite class="b-blockquote__cite" title="Blockquote Title"><span class="b-blockquote__author">@item.CreateDate.ToString("MM/dd/yyyy")</span></cite>
+                                                </blockquote>
+                                            </div>
+                                            <!-- end .b-blockquote-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        </article>
+                        <!-- end .post-->
+                    </main>
+                    <!-- end .l-main-content-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end layout-theme-->
+    <!-- ++++++++++++-->
+    <!-- MAIN SCRIPTS-->
+    <!-- ++++++++++++-->
+    <script src="assets\libs\jquery-1.12.4.min.js"></script>
+    <script src="assets\libs\jquery-migrate-1.2.1.js"></script>
+    <!-- Bootstrap-->
+    <script src="assets\libs\bootstrap\bootstrap.min.js"></script>
+    <!-- User customization-->
+    <script src="assets\js\custom.js"></script>
+    <!-- Headers scripts-->
+    <script src="assets\plugins\headers\slidebar.js"></script>
+    <script src="assets\plugins\headers\header.js"></script>
+    <!-- Color scheme-->
+    <script src="assets\plugins\switcher\js\dmss.js"></script>
+    <!-- Select customization & Color scheme-->
+    <script src="assets\plugins\bootstrap-select\js\bootstrap-select.min.js"></script>
+    <!-- Slider-->
+    <script src="assets\plugins\owl-carousel\owl.carousel.min.js"></script>
+    <!-- Pop-up window-->
+    <script src="assets\plugins\magnific-popup\jquery.magnific-popup.min.js"></script>
+    <!-- Mail scripts-->
+    <script src="assets\plugins\jqBootstrapValidation.js"></script>
+    <script src="assets\plugins\contact_me.js"></script>
+    <!-- Filter and sorting images-->
+    <script src="assets\plugins\isotope\isotope.pkgd.min.js"></script>
+    <script src="assets\plugins\isotope\imagesLoaded.js"></script>
+    <!-- Progress numbers-->
+    <script src="assets\plugins\rendro-easy-pie-chart\jquery.easypiechart.min.js"></script>
+    <script src="assets\plugins\rendro-easy-pie-chart\waypoints.min.js"></script>
+    <!-- NoUiSlider-->
+    <script src="assets\plugins\noUiSlider\nouislider.min.js"></script>
+    <script src="assets\plugins\noUiSlider\wNumb.js"></script>
+    <!-- Animations-->
+    <script src="assets\plugins\scrollreveal\scrollreveal.min.js"></script>
+</body>
+

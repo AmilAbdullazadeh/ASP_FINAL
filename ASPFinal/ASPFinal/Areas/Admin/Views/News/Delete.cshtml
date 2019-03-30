@@ -1,0 +1,34 @@
+﻿@model ASPFinal.Models.News
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="text-info">Delete News</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @readonly = "true" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextBoxFor(m => m.Content, new { @class = "form-control", @readonly = "true" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CreateDate)
+        @Html.TextBoxFor(m => m.CreateDate, new { @class = "form-control", @readonly = "true" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image)
+        <img style="display: block;" width="400" src="~/Areas/Admin/Public/assets/img/@Model.Image" class="img-rounded" />
+    </div>
+
+    <input type="submit" class="btn btn-danger btn-lg" value="Delete" />
+</form>
+
+<a style="margin-top: 50px;" href="/Admin/News/Index" class="btn btn-primary btn-lg">Back to list</a>

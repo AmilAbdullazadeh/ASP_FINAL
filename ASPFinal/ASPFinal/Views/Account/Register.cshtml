@@ -1,0 +1,60 @@
+﻿@model ASPFinal.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+
+<!-- Font Icon -->
+<link rel="stylesheet" href="~/Public/LogandReg/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="~/Public/LogandReg/css/style.css">
+
+<div class="main">
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form method="POST" class="register-form" id="register-form">
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Your Name" })
+                            @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Lastname, new { @class = "form-control", placeholder = "Your Last Name" })
+                            @Html.ValidationMessageFor(model => model.Lastname, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Your Email" })
+                            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", placeholder = "Your Phone number" })
+                            @Html.ValidationMessageFor(model => model.PhoneNumber, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", type = "password", placeholder = "Your Password" })
+                            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="~/Public/LogandReg/images/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="~/Account/Login" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- JS -->
+<script src="~/Public/LogandReg/vendor/jquery/jquery.min.js"></script>
+<script src="~/Public/LogandReg/js/main.js"></script>
+
+@* -------------------------------------------------------------------------------------- *@

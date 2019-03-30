@@ -1,0 +1,531 @@
+﻿@model ASPFinal.ViewModels.HomeIndexVM
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <link rel="stylesheet" href="~/Public/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Public/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+
+    @*<link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">*@
+    @*<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">*@
+</head>
+<body>
+    <!-- Loader-->
+    <div id="page-preloader">
+        <span class="spinner border-t_second_b border-t_prim_a"></span>
+    </div>
+    <!-- Loader end-->
+    <!-- ==========================-->
+    <!-- MOBILE MENU-->
+    <!-- ==========================-->
+    <div data-off-canvas="mobile-slidebar left overlay">
+        <a class="navbar-brand scroll" href="home.html">
+            <img class="normal-logo img-resonsive visible-xs visible-sm" src="~/Public/assets/media\general\logo.png" alt="logo">
+            <img class="scroll-logo img-resonsive hidden-xs hidden-sm" src="~/Public/assets/media\general\logo-dark.png" alt="logo">
+        </a>
+        <ul class="nav navbar-nav">
+            <li>
+                <h4><a href="">Mobile sidebar</a></h4>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Home<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="home.html" tabindex="-1">Home one page</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="repair-shop.html">Repair Shop</a>
+            </li>
+            <li>
+                <a href="car-rental.html">Car Rental</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Listings<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="listings-1.html" tabindex="-1">Listings ver 01</a>
+                    </li>
+                    <li>
+                        <a href="listings-2.html" tabindex="-1">Listings ver 02</a>
+                    </li>
+                    <li>
+                        <a href="listings-3.html" tabindex="-1">Listings ver 03</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="blog-main.html" tabindex="-1">Blog main</a>
+                    </li>
+                    <li>
+                        <a href="blog-post.html" tabindex="-1">Blog post</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Pages<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="CarDetails" tabindex="-1">Car details</a>
+                    </li>
+                    <li>
+                        <a href="typography.html" tabindex="-1">Typography</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="l-theme animated-css" data-header="sticky" data-header-top="200" data-canvas="container">
+        <!-- Start Switcher-->
+        <div class="switcher-wrapper">
+            <div class="demo_changer">
+                <div class="demo-icon text-primary">
+                    <i class="fa fa-cog fa-spin fa-2x"></i>
+                </div>
+                <div class="form_holder">
+                    <div class="predefined_styles">
+                        <div class="skin-theme-switcher">
+                            <h4>Color</h4>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color1" style="background-color:#d01818"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color2" style="background-color:#FFAC3A"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color3" style="background-color:#28af0f"></a>
+                            <a class="styleswitch" href="javascript:void(0);" data-switchcolor="color4" style="background-color:#e425e9"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end switcher-->
+        <!-- ==========================-->
+        <!-- SEARCH MODAL-->
+        <!-- ==========================-->
+        <div class="header-search open-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                        <div class="navbar-search">
+                            <form class="search-global">
+                                <input class="search-global__input" type="text" placeholder="Type to search" autocomplete="off" name="s" value="">
+                                <button class="search-global__btn">
+                                    <i class="icon stroke icon-Search"></i>
+                                </button>
+                                <div class="search-global__note">Begin typing your search above and press return to search.</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="search-close close" type="button">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div data-off-canvas="slidebar-1 left overlay">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="scrollTo" href="#features-section">features</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#services-section">Services</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#works-section">Works</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#about-section">About</a>
+                </li>
+                <li>
+                    <a class="scrollTo" href="#team-section">Team</a>
+                </li>
+                <li>
+                    <a href="#">News</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="blog.html">Blog 1</a>
+                                </li>
+                                <li>
+                                    <a href="blog-2.html">Blog 2</a>
+                                </li>
+                                <li>
+                                    <a href="blog-single.html">Blog single</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="portfolio-single.html">Portfolio single</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                    <div class="wrap-inside-nav">
+                        <div class="inside-col">
+                            <ul class="inside-nav">
+                                <li>
+                                    <a href="contact.html">Contact 1</a>
+                                </li>
+                                <li>
+                                    <a href="contact-2.html">Contact 2</a>
+                                </li>
+                                <li>
+                                    <a href="contact-3.html">Contact 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <header class="header header-boxed-width navbar-fixed-top header-background-white header-color-black header-topbar-dark header-logo-black header-topbarbox-1-left header-topbarbox-2-right header-navibox-1-left header-navibox-2-right header-navibox-3-right header-navibox-4-right">
+            <div class="container container-boxed-width">
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="header-navibox-2">
+                            @if (Session["user"] == null)
+                            {
+                                <ul class="yamm main-menu nav navbar-nav">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                var user = Session["user"] as ASPFinal.Models.User;
+                                <ul class="yamm main-menu nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="car-details.html" data-toggle="dropdown">@user.Name<b class="caret"></b></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a style="color: black;" class="dropdown-item" href="/Account/Logout">Log out</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+                <nav class="navbar" id="nav">
+                    <div class="container">
+                        <div class="header-navibox-1">
+                            <!-- Mobile Trigger Start-->
+                            <button class="menu-mobile-button visible-xs-block js-toggle-mobile-slidebar toggle-menu-button">
+                                <i class="toggle-menu-button-icon"><span></span><span></span><span></span><span></span><span></span><span></span></i>
+                            </button>
+                            <!-- Mobile Trigger End-->
+                            <a class="navbar-brand scroll" href="~/Home/Index">
+                                <img class="normal-logo img-responsive" src="~/Public/assets/media\general\logo.png" alt="logo">
+                                <img class="scroll-logo hidden-xs img-responsive" src="~/Public/assets/media\general\logo-dark.png" alt="logo">
+                            </a>
+                        </div>
+                        @if (Session["user"] != null)
+                        {
+                            <div style="margin-top: 9px;" class="header-navibox-3">
+                                <ul class="nav navbar-nav hidden-xs clearfix vcenter"></ul><a class="btn btn-primary" href="Announcements/Create">Create Announcement</a>
+                            </div>
+                        }
+                        <div class="header-navibox-2">
+                            <ul class="yamm main-menu nav navbar-nav">
+                                <li>
+                                    <a href="~/Home/Index">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end .header-->
+        <div class="main-slider main-slider-1">
+            <div class="slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="true" data-slider-buttons="false">
+                <div class="sp-slides">
+                    <!-- Slide 1-->
+                    <div class="sp-slide">
+                        <img class="sp-image" src="~/Public/assets/media\components\b-main-slider\1.jpeg" alt="slider">
+                        <div class="main-slider__wrap sp-layer" data-width="" data-position="centerLeft" data-horizontal="62%" data-show-transition="left" data-hide-transition="left" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400">
+                            <div class="main-slider__title">
+                                mercedes benz<span class="main-slider__label bg-primary">model 2018</span>
+                            </div>
+                            <div class="main-slider__subtitle">smart drive</div><a class="main-slider__btn btn btn-white btn-lg" href="services.html"><span class="main-slider__btn-label">Starting</span><span class="main-slider__btn-price"> $<strong>560/M</strong></span></a><a class="main-slider__btn btn btn-primary btn-lg" href="services.html">book now</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2-->
+                    <div class="sp-slide">
+                        <img class="sp-image" src="~/Public/assets/media\components\b-main-slider\2.jpeg" alt="slider">
+                        <div class="main-slider__wrap sp-layer" data-width="" data-position="centerLeft" data-horizontal="62%" data-show-transition="left" data-hide-transition="left" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400">
+                            <div class="main-slider__title">
+                                mercedes benz<span class="main-slider__label bg-primary">model 2018</span>
+                            </div>
+                            <div class="main-slider__subtitle">smart drive</div><a class="main-slider__btn btn btn-white" href="services.html">Starting<span class="main-slider__btn-price"> $<strong>560/M</strong></span></a><a class="main-slider__btn btn btn-primary" href="services.html">book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="section-default">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-7 col-md-7">
+                        <div class="text-center">
+                            <h2 class="ui-title-block">Featured Vehicles</h2>
+                            <div class="ui-subtitle-block">Tempor incididunt labore dolore magna alique</div>
+                            <div class="ui-decor"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-xs-5">
+                        <div class="text-center">
+                            <h2 class="ui-title-block">NEWS</h2>
+                            <div class="ui-decor"></div>
+                        </div>
+                    </div>
+                </div>
+                @if (Session["user"] != null)
+                {
+                    <div class="col-xs-7 col-md-7">
+                        <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">VIP Announcements</h2>
+                        <div class="">
+                            @foreach (var item in Model.announcements)
+                            {
+                                if (item.Vip == true)
+                                {
+                                    <div class="b-goods-feat">
+                                        <div class="b-goods-feat__img">
+                                            <a href="@Url.Action("CarDetails", "Home", new { id = item.Id })">
+                                                <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price<span class="b-goods-feat__label_msrp">VIP</span></span>
+                                            </a>
+                                            <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Edit" class="btn btn-warning" href="@Url.Action("Edit", "Announcements", new { id = item.CardDetailsId })">
+                                                Edit
+                                            </a>
+                                            <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Delete" class="btn btn-danger" href="@Url.Action("Delete", "Announcements", new { id = item.Id })">
+                                                Delete
+                                            </a>
+                                        </div>
+                                        <ul class="b-goods-feat__desc list-unstyled">
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
+                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
+                                        </ul>
+                                        <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                        <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                                            @item.CarDetails.ShortContent <br>
+                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+                                        </div>
+
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">Simple Announcements</h2>
+                        <div class="">
+                            @foreach (var item in Model.announcements)
+                            {
+                                if (item.Vip == false)
+                                {
+                                    <div class="b-goods-feat">
+                                        <div class="b-goods-feat__img">
+                                            <a href="@Url.Action("CarDetails", "Home", new { id = item.Id })">
+                                                <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price</span>
+                                            </a>
+                                            <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Edit" class="btn btn-warning" href="@Url.Action("Edit", "Announcements", new { id = item.CardDetailsId })">
+                                                Edit
+                                            </a>
+                                            <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Delete" class="btn btn-danger" href="@Url.Action("Delete", "Announcements", new { id = item.Id })">
+                                                Delete
+                                            </a>
+                                        </div>
+                                        <ul class="b-goods-feat__desc list-unstyled">
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
+                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
+                                        </ul>
+                                        <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                        <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                                            @item.CarDetails.ShortContent<br>
+                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+
+                @if (Session["user"] == null)
+                {
+                    <div class="col-xs-7 col-md-7">
+                        <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">VIP Announcements</h2>
+                        <div class="">
+                            @foreach (var item in Model.announcements)
+                            {
+                                if (item.Vip == true)
+                                {
+                                    <div class="b-goods-feat">
+                                        <div class="b-goods-feat__img">
+                                            <a href="@Url.Action("CarDetails", "Home", new { id = item.Id })">
+                                                <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price<span class="b-goods-feat__label_msrp">VIP</span></span>
+                                            </a>
+                                        </div>
+                                        <ul class="b-goods-feat__desc list-unstyled">
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
+                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
+                                        </ul>
+                                        <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                        <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                                            @item.CarDetails.ShortContent <br>
+                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+                                        </div>
+
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">Simple Announcements</h2>
+                        <div class="">
+                            @foreach (var item in Model.announcements)
+                            {
+                                if (item.Vip == false)
+                                {
+                                    <div class="b-goods-feat">
+                                        <div class="b-goods-feat__img">
+                                            <a href="@Url.Action("CarDetails", "Home", new { id = item.Id })">
+                                                <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price</span>
+                                            </a>
+                                        </div>
+                                        <ul class="b-goods-feat__desc list-unstyled">
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
+                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                            <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
+                                        </ul>
+                                        <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                        <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                                            @item.CarDetails.ShortContent<br>
+                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+
+                <div class="col-md-4 col-xs-4 col-md-offset-1">
+
+                    <div class="" data-min768="2" data-min992="3" data-min1200="3" data-margin="30" data-pagination="false" data-navigation="true" data-auto-play="4000" data-stop-on-hover="true">
+                        @foreach (var item in Model.news)
+                        {
+                            <section class="b-post b-post-1 clearfix">
+                                <div class="entry-media">
+                                    <a href="@Url.Action("FullNews", "Home", new {id = item.Id})">
+                                        <img class="img-responsive" src="~/Areas/Admin/Public/assets/img/@item.Image" alt="Foto">
+                                    </a>
+                                </div>
+                                <div class="entry-main">
+                                    <div class="entry-header">
+                                        <div class="entry-meta">
+                                            <div class="entry-meta__face">
+                                                <img class="img-responsive" src="~/Public/assets/media\content\posts\face\76x76_1.jpeg" alt="face">
+                                            </div><span class="entry-meta__item">Title : @item.Title</span><a class="entry-meta__categorie" href="blog-main.html"><strong>@item.CreateDate.ToString("MM/dd/yyyy")</strong></a>
+                                        </div>
+                                        <h2 class="entry-title"><a href="blog-post.html"></a></h2>
+                                    </div>
+                                    <div class="entry-content">
+                                        <p>@item.Content</p>
+                                    </div>
+                                    <div class="entry-footer">
+                                        <div class="entry-footer__inner">
+                                            <div class="b-post-social">
+                                                SHARE
+                                                <ul class="b-post-social__list list-inline">
+                                                    <li>
+                                                        <a href="twitter.com"><i class="icon fa fa-twitter"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="facebook.com"><i class="icon fa fa-facebook"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="plus.google.com"><i class="icon fa fa-google-plus"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="pinterest.com"><i class="icon fa fa-pinterest-p"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry-meta">
+                                                <span class="entry-meta__item"><i class="entry-meta__icon fa fa-heart"></i>300</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        }
+                        <!-- end .post-->
+                    </div>
+                </div>
+
+                <!-- end .featured-carousel-->
+            </div>
+
+        </section>
+        <!-- end .section-default-->
+        <div class="section-default">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <section class="section-list-brands">
+                            <h2 class="ui-title-block">Top Car Makes</h2>
+                            <div class="ui-subtitle-block">We have large number of Cars available, here you can browse by Make!</div>
+                            <div class="ui-decor"></div>
+                            <ul class="b-list-brands list-unstyled">
+                                @foreach (var item in Model.markas)
+                                {
+                                    <li class="b-list-brands__item">
+                                        <a class="b-list-brands__link" href="listings.html">@item.Name<span class="badge">(@Model.announcements.Where(a => a.CarDetails.Model.MarkaId == item.Id).Count())</span></a>
+                                    </li>
+
+                                }
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- end .carousel-news-->
+                </div>
+
+                <!-- end .b-banner-->
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Public/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
+    @*<script src="owlcarousel/owl.carousel.min.js"></script>*@
+
+</body>
+</html>
+

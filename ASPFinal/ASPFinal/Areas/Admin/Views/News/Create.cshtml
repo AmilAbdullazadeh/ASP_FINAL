@@ -1,0 +1,33 @@
+﻿@model ASPFinal.Models.News
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-info">Create News</h2>
+
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextBoxFor(m => m.Content, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Content, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image)
+        @Html.TextBoxFor(m => m.Image, new { @class = "form-control", type = "file" })
+        @Html.ValidationMessageFor(m => m.Image, null, new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" class="btn btn-success btn-lg" value="Create" />
+</form>
+
+<a style="margin-top: 50px;" href="/Admin/News/Index" class="btn btn-primary btn-lg">Back to list</a>

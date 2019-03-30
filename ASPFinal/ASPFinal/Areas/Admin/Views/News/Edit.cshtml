@@ -1,0 +1,36 @@
+﻿@model ASPFinal.Models.News
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="text-info">Edit News</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextBoxFor(m => m.Content, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Content, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image)
+        <input type="file" class="form-control" name="NewImage" />
+        @Html.ValidationMessageFor(m => m.Image, null, new { @class = "text-danger" })
+
+        @Html.HiddenFor(m => m.Image)
+        <label style="margin: 20px 0;">Current Image</label>
+        <img class="img-rounded" width="200" style="display: block;" src="~/Areas/Admin/Public/assets/img/@Model.Image" />
+    </div>
+
+    <input type="submit" class="btn btn-warning btn-lg" value="Update" />
+</form>
+
+<a style="margin-top: 50px;" href="/Admin/News/Index" class="btn btn-primary btn-lg">Back to list</a>

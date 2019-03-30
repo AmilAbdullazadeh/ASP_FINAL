@@ -1,0 +1,106 @@
+/*!
+ * Yamm!
+ * Yet another megamenu for Bootstrap
+ * http://geedmo.github.com/yamm
+ *
+ * https://github.com/geedmo
+ */
+.yamm .nav, .yamm .dropup, .yamm .dropdown, .yamm .collapse {
+	position: static;
+}
+.yamm .navbar-inner, .yamm .container {
+	position: relative;
+}
+.yamm .dropdown-menu {
+	left: auto;
+    transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+}
+.yamm .dropdown-menu > li {
+	display: block;
+}
+.yamm .dropdown-submenu .dropdown-menu {
+	left: 100%;
+}
+.yamm .nav.pull-right .dropdown-menu {
+	right: 0;
+}
+.yamm .yamm-content {
+	padding: 20px 30px;
+ *zoom: 1;
+}
+.yamm .yamm-content:before, .yamm .yamm-content:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.yamm .yamm-content:after {
+	clear: both;
+}
+.yamm.navbar .nav > li > .dropdown-menu:after, .yamm.navbar .nav > li > .dropdown-menu:before {
+	display: none;
+}
+.yamm .dropdown.yamm-fullwidth .dropdown-menu {
+	width: 100%;
+	left: 0;
+	right: 0;
+}
+
+@media (max-width: 969px) {
+.yamm .dropdown.yamm-fullwidth .dropdown-menu {
+	width: auto;
+}
+.yamm .yamm-content {
+	padding-left: 0;
+	padding-right: 0;
+}
+.yamm .dropdown-menu > li > ul {
+	display: block;
+}
+}
+.yamm {
+	position: relative;
+}
+.yamm .yamm-content * {
+	color: #000;
+}
+.yamm li {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.yamm li a {
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+}
+.yamm.nav>li>a:focus, .yamm.nav>li>a:hover {
+	text-decoration: none;
+	background-color: #337ab7;
+	color: #fff;
+  border:0;
+}
+.yamm.nav .open>a, .yamm.nav .open>a:focus, .yamm.nav .open>a:hover, yamm.nav li.open a {
+	background-color: #337ab7;
+	border-color: #337ab7;
+	color: #fff;
+}
+.yamm .dropdown-menu li {
+	display: inline-block;
+	float: none;
+	width: 100%;
+  font-size: 13px;
+}
+.yamm .dropdown-menu li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding: 13px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.yamm  li.dropdown:hover > .dropdown-menu {
+    margin-top: -15px;
+}

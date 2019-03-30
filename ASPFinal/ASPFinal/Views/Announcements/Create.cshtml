@@ -1,0 +1,132 @@
+﻿@model ASPFinal.ViewModels.HomeIndexVM
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h3 style="margin-bottom: 50px;" class="text-info">Create New Announcement</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <select class="form-control" id="fuel" name="carDetail.FuelTypeId">
+                        @foreach (var item in Model.fuelTypes)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="gear" name="carDetail.GearboxId">
+                        @foreach (var item in Model.gearboxes)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="marka" name="carDetail.marka">
+                        @foreach (var item in Model.markas)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="model" name="carDetail.ModelId">
+                        <option value="0">Select Model ... </option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.Price)
+                    @Html.TextBoxFor(m => m.carDetail.Price, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.Price, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.EngineCapacity)
+                    @Html.TextBoxFor(m => m.carDetail.EngineCapacity, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.EngineCapacity, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.Image)
+                    <input type="file" class="form-control" name="Image" />
+                    @Html.ValidationMessageFor(m => m.carDetail.Image, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.Color)
+                    @Html.TextBoxFor(m => m.carDetail.Color, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.Color, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.ProductionYear)
+                    @Html.TextBoxFor(m => m.carDetail.ProductionYear, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.ProductionYear, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.ShortContent)
+                    @Html.TextBoxFor(m => m.carDetail.ShortContent, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.ShortContent, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.carDetail.CarMarch)
+                    @Html.TextBoxFor(m => m.carDetail.CarMarch, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.carDetail.CarMarch, null, new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <a style="margin-top: 28px; margin-bottom: 50px;" href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg">Back to list</a>
+
+            <input type="submit" class="btn btn-success btn-lg" value="Create" />
+
+        </form>
+
+
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+
+            console.log("Doucment is ready !");
+            $("#marka").change(function () {
+                $mid = +$(this).val();
+
+                console.log("mid : " + $mid);
+
+                if ($mid) {
+                    console.log("if is working .. ");
+                    $.ajax({
+                        url: "/AJAX/LoadModel",
+                        data: { markaId: $mid },
+                        type: "GET",
+                        success: function (res) {
+                            $("#model").html(res);
+                        }
+                    });
+                }
+            });
+        })
+    </script>
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ASPFinal.Models.Announcements>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hay Admin !</h2>
+
+<h3>Here is a list of Announcements</h3>
+
+<table class="table table-bordered">
+    <thead class="bg-info">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.CreateDate)</th>
+            <th>@Html.DisplayNameFor(m => m.UpdateDate)</th>
+            <th>@Html.DisplayNameFor(m => m.City)</th>
+            <th>@Html.DisplayNameFor(m => m.Vip)</th>
+            @* <th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="vertical-align: middle; text-align: center;">@item.CreateDate</td>
+                <td style="vertical-align: middle; text-align: center;">@item.UpdateDate</td>
+                <td style="vertical-align: middle; text-align: center;">@item.City</td>
+                <td style="vertical-align: middle; text-align: center;">@item.Vip</td>
+
+                @*<td style="vertical-align: middle; text-align: center;">
+                        <a title="Edit Carousels" class="btn btn-warning" href="/Admin/Carousel/Edit/@item.Id">
+                            <i class="lnr lnr-pencil"></i>
+                        </a>
+                        <a title="Delete Carousels" class="btn btn-danger" href="/Admin/Carousel/Delete/@item.Id">
+                            <i class="lnr lnr-trash"></i>
+                        </a>
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

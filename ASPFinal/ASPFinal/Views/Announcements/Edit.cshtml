@@ -1,0 +1,90 @@
+﻿@model ASPFinal.Models.CarDetails
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div class="container">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-5">
+
+                <div class="form-group">
+                    <select class="form-control" id="gear" name="FuelTypeId" typeof="reading">
+                        <option value="@Model.FuelType.Id">@Model.FuelType.Name</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="gear" name="GearboxId" typeof="reading">
+                        <option value="@Model.Gearbox.Id">@Model.Gearbox.Name</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" id="model" name="ModelId">
+                        <option value="@Model.Model.Id">@Model.Model.Name</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Price)
+                    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.EngineCapacity)
+                    @Html.TextBoxFor(m => m.EngineCapacity, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.EngineCapacity, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image)
+                    <input type="file" class="form-control" name="NewImage" />
+                    @Html.ValidationMessageFor(m => m.Image, null, new { @class = "text-danger" })
+
+                    @Html.HiddenFor(m => m.Image)
+                    <label style="margin: 20px 0;">Current Image</label>
+                    <img class="img-rounded" width="200" style="display: block;" src="~/Public/assets/media/components/b-goods/@Model.Image" />
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Color)
+                    @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Color, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ProductionYear)
+                    @Html.TextBoxFor(m => m.ProductionYear, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ProductionYear, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ShortContent)
+                    @Html.TextBoxFor(m => m.ShortContent, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ShortContent, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CarMarch)
+                    @Html.TextBoxFor(m => m.CarMarch, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CarMarch, null, new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <a style="margin-top: 28px; margin-bottom: 50px;" href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg">Back to list</a>
+
+            <input type="submit" class="btn btn-success btn-lg" value="Update" />
+
+        </form>
+
+    </div>
+</div>

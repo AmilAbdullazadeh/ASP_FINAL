@@ -1,0 +1,41 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:  MotorLand
+Version:  1.0
+Assigned to:  WebNik
+Primary use:  MotorLand
+-------------------------------------------------------------------*/
+
+
+/* FONTS*/
+@import url('../../../../css.css');
+@import '../fonts/font-awesome-4.7/css/font-awesome.min.css';
+@import '../fonts/stroke/style.css';
+@import '../fonts/elegant/style.css';
+@import '../fonts/flaticon/font/flaticon.css';
+
+
+
+/* PLUGIN CSS */
+
+@import '../libs/bootstrap/bootstrap.css';                /* bootstrap */
+@import '../plugins/bootstrap-select/css/bootstrap-select.css';   /* select customization */
+@import '../plugins/headers/header.css';                /* header */
+@import '../plugins/headers/yamm.css';                /* header */
+@import '../plugins/slider-pro/slider-pro.css';         /* main slider */
+@import '../plugins/owl-carousel/owl.carousel.css';                 /* other sliders */
+@import '../plugins/noUiSlider/nouislider.css';                /* nouislider */
+@import '../plugins/magnific-popup/magnific-popup.css';            /* modal */
+@import '../plugins/animate/animate.css';                        /* animations */
+@import '../plugins/datepicker/jquery.datetimepicker.css';        /* datepicker */
+@import '../plugins/parallax/parallax.css';                        /* parallax */
+
+/*@import '../plugins/flowplayer/skin/playful.css';          /* video-player */
+
+
+/* MAIN CSS */
+
+@import 'theme.css';
+@import 'color.css';
+@import 'responsive.css';
