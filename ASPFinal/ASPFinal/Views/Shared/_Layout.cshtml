@@ -16,8 +16,6 @@
     <link href="~/Public/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2">
     <link href="~/Public/assets/plugins/switcher/css/color3.css" rel="alternate stylesheet" title="color3">
     <link href="~/Public/assets/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4">
-    <link rel="stylesheet" href="~/Public/assets/plugins/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Public/assets/plugins/owl-carousel/owl.theme.default.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 </head>
@@ -44,7 +42,6 @@
     <!-- Select customization & Color scheme-->
     <script src="~/Public/assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
     <!-- Slider-->
-    <script src="~/Public/assets/plugins/jquery.min.js"></script>
     <script src="~/Public/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
     <!-- Pop-up window-->
     <script src="~/Public/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
@@ -71,6 +68,11 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/main")
+    @Scripts.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/index")
+    @Scripts.Render("~/bundles/custom")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

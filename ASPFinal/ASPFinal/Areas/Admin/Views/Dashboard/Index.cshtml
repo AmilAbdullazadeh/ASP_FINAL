@@ -21,8 +21,8 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="vertical-align: middle; text-align: center;">@item.CreateDate</td>
-                <td style="vertical-align: middle; text-align: center;">@item.UpdateDate</td>
+                <td style="vertical-align: middle; text-align: center;">@item.CreateDate.ToString("MM/dd/yyyy ")</td>
+                <td style="vertical-align: middle; text-align: center;">@item.UpdateDate.ToString("MM/dd/yyyy ")</td>
                 <td style="vertical-align: middle; text-align: center;">@item.City</td>
                 <td style="vertical-align: middle; text-align: center;">@item.Vip</td>
 

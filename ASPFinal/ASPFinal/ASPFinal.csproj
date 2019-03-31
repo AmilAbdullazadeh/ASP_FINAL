@@ -908,6 +908,7 @@
     <Content Include="Views\Announcements\Create.cshtml" />
     <Content Include="Views\Shared\_LoadModelPartial.cshtml" />
     <Content Include="Views\Announcements\Edit.cshtml" />
+    <Content Include="Views\Shared\_PartialAnnouncement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

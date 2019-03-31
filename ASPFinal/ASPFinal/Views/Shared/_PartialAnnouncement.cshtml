@@ -1,0 +1,59 @@
+﻿@model ASPFinal.Models.Announcements
+
+
+    @if (Model.Vip == true)
+    {
+
+        <div class="b-goods-feat">
+            <div class="b-goods-feat__img">
+                <a href="@Url.Action("CarDetails", "Home", new { id = Model })">
+                    <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@Model.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@Model.CarDetails.Price <spna>VIP</spna> </span>
+                </a>
+                <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Edit" class="btn btn-warning" href="@Url.Action("Edit", "Announcements", new { id = Model.CardDetailsId })">
+                    Edit
+                </a>
+                <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Delete" class="btn btn-danger" href="@Url.Action("Delete", "Announcements", new { id = Model })">
+                    Delete
+                </a>
+            </div>
+            <ul class="b-goods-feat__desc list-unstyled">
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.CarMarch mi</li>
+                <li class="b-goods-feat__desc-item">Year: @Model.CarDetails.ProductionYear.ToString("yyyy")</li>
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.Gearbox.Name</li>
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.FuelType.Name</li>
+            </ul>
+            <h3 class="b-goods-feat__name">@Model.CarDetails.Model.Name</h3>
+            <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                @Model.CarDetails.ShortContent<br>
+                <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+            </div>
+        </div>
+    }
+
+    @if (Model.Vip == false)
+    {
+        <div class="b-goods-feat">
+            <div class="b-goods-feat__img">
+                <a href="@Url.Action("CarDetails", "Home", new { id = Model })">
+                    <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@Model.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@Model.CarDetails.Price</span>
+                </a>
+                <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Edit" class="btn btn-warning" href="@Url.Action("Edit", "Announcements", new { id = Model.CardDetailsId })">
+                    Edit
+                </a>
+                <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Delete" class="btn btn-danger" href="@Url.Action("Delete", "Announcements", new { id = Model })">
+                    Delete
+                </a>
+            </div>
+            <ul class="b-goods-feat__desc list-unstyled">
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.CarMarch mi</li>
+                <li class="b-goods-feat__desc-item">Year: @Model.CarDetails.ProductionYear.ToString("yyyy")</li>
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.Gearbox.Name</li>
+                <li class="b-goods-feat__desc-item">@Model.CarDetails.FuelType.Name</li>
+            </ul>
+            <h3 class="b-goods-feat__name">@Model.CarDetails.Model.Name</h3>
+            <div style="margin-bottom: 3em;" class="b-goods-feat__info">
+                @Model.CarDetails.ShortContent<br>
+                <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+            </div>
+        </div>
+    }

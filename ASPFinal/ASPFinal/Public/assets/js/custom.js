@@ -72,21 +72,7 @@ $(document).ready(function () {
     });
 
 
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-        items: 4,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 1000,
-        autoplayHoverPause: true
-    });
-    $('.play').on('click', function () {
-        owl.trigger('play.owl.autoplay', [1000])
-    })
-    $('.stop').on('click', function () {
-        owl.trigger('stop.owl.autoplay')
-    })
+
 
 
     //////////////////////////////
@@ -125,19 +111,19 @@ $(document).ready(function () {
     /////////////////////////////////////
 
 
-    if ($('body').length) {
-        $(window).on('scroll', function () {
-            var winH = $(window).scrollTop();
+    //if ($('body').length) {
+    //    $(window).on('scroll', function() {
+    //        var winH = $(window).scrollTop();
 
-            $('.js-progress-list').waypoint(function () {
-                $('.js-chart').each(function () {
-                    CharsStart();
-                });
-            }, {
-                    offset: '80%'
-                });
-        });
-    }
+    //        $('.js-progress-list').waypoint(function() {
+    //            $('.js-chart').each(function() {
+    //                CharsStart();
+    //            });
+    //        }, {
+    //            offset: '80%'
+    //        });
+    //    });
+    //}
 
 
     function CharsStart() {

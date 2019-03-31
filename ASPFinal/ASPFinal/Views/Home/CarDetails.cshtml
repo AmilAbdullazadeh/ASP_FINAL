@@ -248,7 +248,7 @@
         <main class="l-main-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         @if (Model.Announcements.Vip == true)
                         {
                             <div class="b-goods-feat">
@@ -273,43 +273,101 @@
                                 <div class="b-goods-feat__info">@Model.Announcements.CarDetails.ShortContent</div>
                             </div>
                         }
-                    </div>
-                    <div class="col-md-4">
-                        <aside class="l-sidebar-2">
-                            <div class="b-car-info">
-                                <div class="b-car-info__price">
-                                    $ @Model.Announcements.CarDetails.Price
+                        <div style="margin-top: 50px;">
+                            <aside style="padding-left: 0;" class="l-sidebar-2">
+                                <div class="b-car-info">
+                                    <div class="b-car-info__price">
+                                        $ @Model.Announcements.CarDetails.Price
+                                    </div>
+                                    <dl class="b-car-info__desc dl-horizontal bg-grey">
+
+                                        <dt class="b-car-info__desc-dt">Marka : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Model.Marka.Name</dd>
+
+                                        <dt class="b-car-info__desc-dt">Year : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.ProductionYear.ToString("yyyy")</dd>
+
+                                        <dt class="b-car-info__desc-dt">Capacity : </dt>
+                                        <dd class="b-car-info__desc-dd"> @Model.Announcements.CarDetails.EngineCapacity</dd>
+
+                                        <dt class="b-car-info__desc-dt">March : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.CarMarch </dd>
+
+                                        <dt class="b-car-info__desc-dt">Fuel Type : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.FuelType.Name</dd>
+
+                                        <dt class="b-car-info__desc-dt">Color : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Color</dd>
+
+                                        <dt class="b-car-info__desc-dt">Gearbox : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Gearbox.Name</dd>
+
+                                        <dt class="b-car-info__desc-dt">March : </dt>
+                                        <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.CarMarch</dd>
+                                    </dl>
+                                    <!-- end .b-banner-->
                                 </div>
-                                <dl class="b-car-info__desc dl-horizontal bg-grey">
+                            </aside>
 
-                                    <dt class="b-car-info__desc-dt">Marka : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Model.Marka.Name</dd>
-
-                                    <dt class="b-car-info__desc-dt">Year : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.ProductionYear.ToString("yyyy")</dd>
-
-                                    <dt class="b-car-info__desc-dt">Capacity : </dt>
-                                    <dd class="b-car-info__desc-dd"> @Model.Announcements.CarDetails.EngineCapacity</dd>
-
-                                    <dt class="b-car-info__desc-dt">March : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.CarMarch </dd>
-
-                                    <dt class="b-car-info__desc-dt">Fuel Type : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.FuelType.Name</dd>
-
-                                    <dt class="b-car-info__desc-dt">Color : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Color</dd>
-
-                                    <dt class="b-car-info__desc-dt">Gearbox : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.Gearbox.Name</dd>
-
-                                    <dt class="b-car-info__desc-dt">March : </dt>
-                                    <dd class="b-car-info__desc-dd">@Model.Announcements.CarDetails.CarMarch</dd>
-                                </dl>
-                                <!-- end .b-banner-->
-                            </div>
-                        </aside>
+                        </div>
                     </div>
+                    <div class="col-md-4 col-xs-4 col-md-offset-2">
+
+                        <div class="">
+                            @foreach (var item in Model.News)
+                            {
+                                <section class="b-post b-post-1 clearfix">
+                                    <div class="entry-media">
+                                        <a href="@Url.Action("FullNews", "Home", new {id = item.Id})">
+                                            <img class="img-responsive" src="~/Areas/Admin/Public/assets/img/@item.Image" alt="Foto">
+                                        </a>
+                                    </div>
+                                    <div class="entry-main">
+                                        <div class="entry-header">
+                                            <div class="entry-meta">
+                                                <div class="entry-meta__face">
+                                                    <img class="img-responsive" src="~/Public/assets/media\content\posts\face\76x76_1.jpeg" alt="face">
+                                                </div><span class="entry-meta__item">Title : @item.Title</span><a class="entry-meta__categorie" href="blog-main.html"><strong>@item.CreateDate.ToString("MM/dd/yyyy")</strong></a>
+                                            </div>
+                                            <h2 class="entry-title"><a href="blog-post.html"></a></h2>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>@item.Content</p>
+                                        </div>
+                                        <div class="entry-footer">
+                                            <div class="entry-footer__inner">
+                                                <div class="b-post-social">
+                                                    SHARE
+                                                    <ul class="b-post-social__list list-inline">
+                                                        <li>
+                                                            <a href="twitter.com"><i class="icon fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="facebook.com"><i class="icon fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="plus.google.com"><i class="icon fa fa-google-plus"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="pinterest.com"><i class="icon fa fa-pinterest-p"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="entry-meta">
+                                                    <span class="entry-meta__item"><i class="entry-meta__icon fa fa-heart"></i>300</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            }
+                            <!-- end .post-->
+                        </div>
+                    </div>
+
+                    @*<div class="col-md-6">
+                        </div>*@
+
                 </div>
             </div>
             <!-- end .b-car-details-->
@@ -317,27 +375,53 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2 class="ui-title-block">Related Cars</h2>
-                            <div class="ui-decor"></div>
-                            <div class="" data-min768="2" data-min992="3" data-min1200="3" data-margin="30" data-pagination="false" data-navigation="true" data-auto-play="4000" data-stop-on-hover="true">
+                            <h2 style="margin-left: 1em;" class="ui-title-block">Related Cars</h2>
+                            <div style="margin:1em 0 2em 3em;" class="ui-decor"></div>
+                            <div class="">
                                 @foreach (var item in Model.RelatedADS)
                                 {
-                                    <div style="margin-bottom: 20px;" class="b-goods-feat">
-                                        <div class="b-goods-feat__img">
-                                            <a href="@item.CarDetails.Model.Id">
-                                                <img class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price</span>
-                                            </a>
+                                    if (item.Vip == true)
+                                    {
+                                        <div class="col-md-4">
+                                            <div style="margin-bottom: 20px;" class="b-goods-feat">
+                                                <div class="b-goods-feat__img">
+                                                    <a href="@item.CarDetails.Id">
+                                                        <img class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price (VIP)</span>
+                                                    </a>
+                                                </div>
+                                                <ul class="b-goods-feat__desc list-unstyled">
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch</li>
+                                                    <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.Model.Marka.Name</li>
+                                                </ul>
+                                                <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                                <div class="b-goods-feat__info">@item.CarDetails.ShortContent</div>
+                                            </div>
                                         </div>
-                                        <ul class="b-goods-feat__desc list-unstyled">
-                                            <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch</li>
-                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
-                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
-                                            <li class="b-goods-feat__desc-item">@item.CarDetails.Model.Marka.Name</li>
-                                        </ul>
-                                        <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
-                                        <div class="b-goods-feat__info">@item.CarDetails.ShortContent</div>
-                                        <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
-                                    </div>
+                                    }
+
+                                    if (item.Vip == false)
+                                    {
+                                        <div class="col-md-4">
+                                            <div style="margin-bottom: 20px;" class="b-goods-feat">
+                                                <div class="b-goods-feat__img">
+                                                    <a href="@item.CarDetails.Model.Id">
+                                                        <img class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price</span>
+                                                    </a>
+                                                </div>
+                                                <ul class="b-goods-feat__desc list-unstyled">
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch</li>
+                                                    <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
+                                                    <li class="b-goods-feat__desc-item">@item.CarDetails.Model.Marka.Name</li>
+                                                </ul>
+                                                <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
+                                                <div class="b-goods-feat__info">@item.CarDetails.ShortContent</div>
+                                            </div>
+                                        </div>
+                                    }
+
                                 }
                                 <!-- end .b-goods-featured-->
 

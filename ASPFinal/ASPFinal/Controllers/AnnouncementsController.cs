@@ -9,6 +9,7 @@ using ASPFinal.DAL;
 using static ASPFinal.Extensions.FileExtensions;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace ASPFinal.Controllers
 {
@@ -38,6 +39,9 @@ namespace ASPFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Exclude = "Image")] HomeIndexVM homeIndexVM, HttpPostedFileBase Image)
         {
+            //try
+            //{
+            //CarDetails carDetails = new CarDetails();
 
             if (!ModelState.IsValid)
             {
@@ -51,14 +55,58 @@ namespace ASPFinal.Controllers
                 return View(homeIndexVM);
             }
 
+
+            //Task CarDetailsWaiter = Task.Run(() =>
+            //{
+            //    carDetails.CarMarch = homeIndexVM.carDetail.CarMarch;
+            //    carDetails.Color = homeIndexVM.carDetail.Color;
+            //    carDetails.EngineCapacity = homeIndexVM.carDetail.EngineCapacity;
+            //    carDetails.ShortContent = homeIndexVM.carDetail.ShortContent;
+            //    carDetails.GearboxId = homeIndexVM.carDetail.GearboxId;
+            //    carDetails.FuelTypeId = homeIndexVM.carDetail.FuelTypeId;
+            //    carDetails.ModelId = homeIndexVM.carDetail.ModelId;
+            //    carDetails.Image = SaveImage(Server.MapPath("~/Public/assets/media/components/b-goods/"), Image);
+
+            //    _context.CarDetails.Add(carDetails);
+            //});
+
+            //_context.SaveChanges();
+
+            //await CarDetailsWaiter;
+
+            //_context.Announcements.Add(new Announcements
+            //{
+            //    CardDetailsId = carDetails.Id,
+            //    CreateDate = DateTime.Now,
+            //    UpdateDate = DateTime.Now,
+            //    Vip = false
+            //});
+
+            //_context.SaveChanges();
+            //}
+
+            //catch (DbEntityValidationException e)
+            //{
+            //    foreach (var eve in e.EntityValidationErrors)
+            //    {
+            //        Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+            //            eve.Entry.Entity.GetType().Name, eve.Entry.State);
+            //        foreach (var ve in eve.ValidationErrors)
+            //        {
+            //            Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+            //                ve.PropertyName, ve.ErrorMessage);
+            //        }
+            //    }
+            //    throw;
+            //}
+
             homeIndexVM.carDetail.Image = SaveImage(Server.MapPath("~/Public/assets/media/components/b-goods/"), Image);
 
-            // homeIndexVM.announcement.CardDetailsId == homeIndexVM.carDetail.Id;
-
             _context.CarDetails.Add(homeIndexVM.carDetail);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
 
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home");
         }
 
 

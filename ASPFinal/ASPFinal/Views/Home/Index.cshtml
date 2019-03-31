@@ -255,39 +255,11 @@
             </div>
         </header>
         <!-- end .header-->
-        <div class="main-slider main-slider-1">
-            <div class="slider-pro" id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="true" data-slider-buttons="false">
-                <div class="sp-slides">
-                    <!-- Slide 1-->
-                    <div class="sp-slide">
-                        <img class="sp-image" src="~/Public/assets/media\components\b-main-slider\1.jpeg" alt="slider">
-                        <div class="main-slider__wrap sp-layer" data-width="" data-position="centerLeft" data-horizontal="62%" data-show-transition="left" data-hide-transition="left" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400">
-                            <div class="main-slider__title">
-                                mercedes benz<span class="main-slider__label bg-primary">model 2018</span>
-                            </div>
-                            <div class="main-slider__subtitle">smart drive</div><a class="main-slider__btn btn btn-white btn-lg" href="services.html"><span class="main-slider__btn-label">Starting</span><span class="main-slider__btn-price"> $<strong>560/M</strong></span></a><a class="main-slider__btn btn btn-primary btn-lg" href="services.html">book now</a>
-                        </div>
-                    </div>
-                    <!-- Slide 2-->
-                    <div class="sp-slide">
-                        <img class="sp-image" src="~/Public/assets/media\components\b-main-slider\2.jpeg" alt="slider">
-                        <div class="main-slider__wrap sp-layer" data-width="" data-position="centerLeft" data-horizontal="62%" data-show-transition="left" data-hide-transition="left" data-show-duration="2000" data-show-delay="1200" data-hide-delay="400">
-                            <div class="main-slider__title">
-                                mercedes benz<span class="main-slider__label bg-primary">model 2018</span>
-                            </div>
-                            <div class="main-slider__subtitle">smart drive</div><a class="main-slider__btn btn btn-white" href="services.html">Starting<span class="main-slider__btn-price"> $<strong>560/M</strong></span></a><a class="main-slider__btn btn btn-primary" href="services.html">book now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <section class="section-default">
+        <section style="padding-top: 195px" class="section-default">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-7 col-md-7">
-                        <div class="text-center">
+                        <div style="padding-right: 79px;" class="text-center">
                             <h2 class="ui-title-block">Featured Vehicles</h2>
                             <div class="ui-subtitle-block">Tempor incididunt labore dolore magna alique</div>
                             <div class="ui-decor"></div>
@@ -295,14 +267,14 @@
                     </div>
                     <div class="col-md-5 col-xs-5">
                         <div class="text-center">
-                            <h2 class="ui-title-block">NEWS</h2>
-                            <div class="ui-decor"></div>
+                            <h2 style="padding-left: 80px;" class="ui-title-block">NEWS</h2>
+                            <div style="margin-left: 105px;" class="ui-decor"></div>
                         </div>
                     </div>
                 </div>
                 @if (Session["user"] != null)
                 {
-                    <div class="col-xs-7 col-md-7">
+                    <div class="col-xs-6 col-md-6">
                         <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">VIP Announcements</h2>
                         <div class="">
                             @foreach (var item in Model.announcements)
@@ -312,7 +284,7 @@
                                     <div class="b-goods-feat">
                                         <div class="b-goods-feat__img">
                                             <a href="@Url.Action("CarDetails", "Home", new { id = item.Id })">
-                                                <img style="width: 45.4em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price<span class="b-goods-feat__label_msrp">VIP</span></span>
+                                                <img style="width: 50em; height: 23em;" class="img-responsive" src="~/Public/assets/media\components\b-goods\@item.CarDetails.Image" alt="foto"><span class="b-goods-feat__label">$@item.CarDetails.Price<span class="b-goods-feat__label_msrp">VIP</span></span>
                                             </a>
                                             <a style="margin-top: 10px; height: 40px; border-radius: 7px;" title="Edit" class="btn btn-warning" href="@Url.Action("Edit", "Announcements", new { id = item.CardDetailsId })">
                                                 Edit
@@ -323,14 +295,14 @@
                                         </div>
                                         <ul class="b-goods-feat__desc list-unstyled">
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
-                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">Production year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
                                         </ul>
                                         <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
                                         <div style="margin-bottom: 3em;" class="b-goods-feat__info">
                                             @item.CarDetails.ShortContent <br>
-                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
+                                            <div style="width: 94%; margin-top: 3em; margin-bottom: 3em;" class="ui-decor"></div>
                                         </div>
 
                                     </div>
@@ -357,15 +329,15 @@
                                         </div>
                                         <ul class="b-goods-feat__desc list-unstyled">
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
-                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">Production year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
                                         </ul>
                                         <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
                                         <div style="margin-bottom: 3em;" class="b-goods-feat__info">
                                             @item.CarDetails.ShortContent<br>
-                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
                                         </div>
+                                        <div style="width: 94%; margin-top: 3em; margin-bottom: 3em;" class="ui-decor"></div>
                                     </div>
                                 }
                             }
@@ -375,7 +347,7 @@
 
                 @if (Session["user"] == null)
                 {
-                    <div class="col-xs-7 col-md-7">
+                    <div class="col-xs-6 col-md-6">
                         <h2 style="color:#D01818; margin: 20px 0; text-align: center" class=" ui-title-block">VIP Announcements</h2>
                         <div class="">
                             @foreach (var item in Model.announcements)
@@ -390,16 +362,15 @@
                                         </div>
                                         <ul class="b-goods-feat__desc list-unstyled">
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
-                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">Production year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
                                         </ul>
                                         <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
                                         <div style="margin-bottom: 3em;" class="b-goods-feat__info">
                                             @item.CarDetails.ShortContent <br>
-                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
                                         </div>
-
+                                        <div style="width: 94%; margin-top: 3em; margin-bottom: 3em;" class="ui-decor"></div>
                                     </div>
                                 }
                             }
@@ -418,15 +389,15 @@
                                         </div>
                                         <ul class="b-goods-feat__desc list-unstyled">
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.CarMarch mi</li>
-                                            <li class="b-goods-feat__desc-item">Year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
+                                            <li class="b-goods-feat__desc-item">Production year: @item.CarDetails.ProductionYear.ToString("yyyy")</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.Gearbox.Name</li>
                                             <li class="b-goods-feat__desc-item">@item.CarDetails.FuelType.Name</li>
                                         </ul>
                                         <h3 class="b-goods-feat__name">@item.CarDetails.Model.Name</h3>
                                         <div style="margin-bottom: 3em;" class="b-goods-feat__info">
                                             @item.CarDetails.ShortContent<br>
-                                            <span style="color: #D01818">----------------------------------------------------------------------------------------------------------------------------------------</span>
                                         </div>
+                                        <div style="width: 94%; margin-top: 3em; margin-bottom: 3em;" class="ui-decor"></div>
                                     </div>
                                 }
                             }
@@ -434,9 +405,9 @@
                     </div>
                 }
 
-                <div class="col-md-4 col-xs-4 col-md-offset-1">
+                <div class="col-md-4 col-xs-4 col-md-offset-2">
 
-                    <div class="" data-min768="2" data-min992="3" data-min1200="3" data-margin="30" data-pagination="false" data-navigation="true" data-auto-play="4000" data-stop-on-hover="true">
+                    <div class="">
                         @foreach (var item in Model.news)
                         {
                             <section class="b-post b-post-1 clearfix">
@@ -520,10 +491,43 @@
             </div>
         </div>
     </div>
-
-    <script src="~/Public/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="~/Public/assets/js/test.js"></script>
+    <script src="../../Public/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="jquery.min.js"></script>
+
+    @*@section scripts{
+            <script>
+                $(function () {
+                      var skipCount = +@ViewBag.SkipCount;
+                      var totalCount = +@ViewBag.TotalCount;
+
+                    var scrollListener = function () {
+                        if ($(window).height() + $(document).scrollTop() == $(document).height()) {
+                            $.ajax({
+                                url: "/AJAX/LoadMoreAnnouncements",
+                                data: { skip: skipCount },
+                                type: "GET",
+                                success: function (res) {
+                                    res = $($.parseHTML(res)).show();
+                                    $("#partialAnnoun").append(res);
+                                    setTimeout(function () {
+                                        res.fadeIn(400);
+                                    }, 400)
+                                    $("#skipCount").val(skipCount++);
+
+                                    if (skipCount == totalCount) {
+                                        $(window).off("scroll", scrollListener);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    $(window).on("scroll", scrollListener);
+                });
+            </script>
+        }*@
+
+    <!-- <script src="../../jquery.min.js"></script> -->
     @*<script src="owlcarousel/owl.carousel.min.js"></script>*@
 
 </body>

@@ -19,6 +19,9 @@ namespace ASPFinal.Controllers
 
         public ActionResult Index()
         {
+            //ViewBag.SkipCount = 2;
+            //ViewBag.TotalCount = _context.Announcements.Count();
+
             HomeIndexVM vm = new HomeIndexVM
             {
                 news = _context.News.OrderByDescending(a => a.CreateDate).Take(5).ToList(),
@@ -36,6 +39,7 @@ namespace ASPFinal.Controllers
 
             DetailsVM vm = new DetailsVM
             {
+                News = _context.News.OrderByDescending(a => a.CreateDate).Take(5).ToList(),
                 Announcements = announcements,
                 RelatedADS = _context.Announcements.Where(a => a.CarDetails.ModelId == announcements.CarDetails.ModelId && a.Id != announcements.Id).ToList()
             };

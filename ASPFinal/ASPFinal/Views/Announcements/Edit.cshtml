@@ -3,8 +3,6 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 <div class="container">
     <div class="row">
         <form method="post" enctype="multipart/form-data">
@@ -62,7 +60,7 @@
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.ProductionYear)
-                    @Html.TextBoxFor(m => m.ProductionYear, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.ProductionYear, new { @class = "form-control", @type = "date", @Value = Model.ProductionYear.ToString("yyyy-MM-dd") })
                     @Html.ValidationMessageFor(m => m.ProductionYear, null, new { @class = "text-danger" })
                 </div>
 

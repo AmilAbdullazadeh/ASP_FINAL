@@ -11,6 +11,8 @@ namespace ASPFinal.ViewModels
     {
         public Announcements Announcements { get; set; }
 
+        public IEnumerable<News> News { get; set; }
+
         public List<Announcements> RelatedADS { get; set; }
 
         public ResentNewsVM ResVM { get; set; }

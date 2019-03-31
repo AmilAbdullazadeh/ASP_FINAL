@@ -28,5 +28,10 @@ namespace ASPFinal.Controllers
 
             return PartialView("_LoadModelPartial", vm);
         }
+        //public ActionResult LoadMoreAnnouncements(int skip)
+        //{
+        //    var itemAnnoun = _context.Announcements.OrderByDescending(p => p.UpdateDate).Skip(skip).Take(1).FirstOrDefault();
+        //    return PartialView("_PartialAnnouncement", itemAnnoun);
+        //}
     }
 }
